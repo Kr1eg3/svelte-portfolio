@@ -1,50 +1,50 @@
 # Portfolio — SvelteKit + Cloudflare Pages
 
-Персональное портфолио в стиле [thavlik.dev](https://thavlik.dev).
+Personal portfolio website inspired by [thavlik.dev](https://thavlik.dev).
 
-## Стек
+## Stack
 
-- **SvelteKit 2** — фреймворк (SSR + статика)
-- **Cloudflare Pages** — хостинг (бесплатный план)
-- **Cloudflare Image Resizing** — ресайз картинок на лету через `/api/thumbnail`
+- **SvelteKit 2** — framework (SSR + static)
+- **Cloudflare Pages** — hosting (free plan)
+- **Cloudflare Image Resizing** — on-the-fly image resizing via `/api/thumbnail`
 
 ---
 
-## Быстрый старт (локально)
+## Quick Start (local)
 
 ```bash
-# 1. Установи зависимости
+# 1. Install dependencies
 npm install
 
-# 2. Запусти dev-сервер
+# 2. Start dev server
 npm run dev
 
-# 3. Открой http://localhost:5173
+# 3. Open http://localhost:5173
 ```
 
 ---
 
-## Структура проекта
+## Project Structure
 
 ```
 portfolio/
 ├── src/
-│   ├── app.html              ← HTML-шаблон
-│   ├── app.css               ← Глобальные стили
+│   ├── app.html              ← HTML template
+│   ├── app.css               ← Global styles
 │   ├── lib/
-│   │   ├── data.js           ← ★ ДАННЫЕ ПРОЕКТОВ (редактируй тут!)
+│   │   ├── data.js           ← ★ PROJECT DATA (edit here!)
 │   │   └── components/
 │   │       └── ProjectCard.svelte
 │   └── routes/
 │       ├── +layout.svelte    ← Root layout
-│       ├── +page.svelte      ← Главная страница
+│       ├── +page.svelte      ← Main page
 │       └── api/
 │           └── thumbnail/
-│               └── +server.js ← API ресайза картинок
+│               └── +server.js ← Image resizing API
 ├── static/
 │   ├── favicon.svg
 │   ├── robots.txt
-│   └── media/                ← Сюда клади скриншоты/видео
+│   └── media/                ← Put screenshots/videos here
 ├── svelte.config.js
 ├── vite.config.js
 └── package.json
@@ -52,9 +52,9 @@ portfolio/
 
 ---
 
-## Как добавить проект
+## Adding a Project
 
-Открой `src/lib/data.js` и добавь объект в массив `projects`:
+Open `src/lib/data.js` and add an object to the `projects` array:
 
 ```js
 {
@@ -62,10 +62,10 @@ portfolio/
     title: 'My Cool Project',
     subtitle: 'Short description',
     status: 'open-source',       // 'open-source' | 'proprietary' | 'private'
-    url: 'https://github.com/...', // ссылка в заголовке (или null)
+    url: 'https://github.com/...', // header link (or null)
     media: {
         type: 'video',           // 'video' | 'image'
-        src: '/media/demo.webm'  // путь к файлу в static/media/
+        src: '/media/demo.webm'  // path to file in static/media/
     },
     description: 'Full description...',
     tags: ['C++', 'Vulkan'],
@@ -75,20 +75,20 @@ portfolio/
 }
 ```
 
-### Медиа-файлы
+### Media Files
 
-- Видео: используй `.webm` (VP9) — лёгкий и поддерживается всеми браузерами
-- Изображения: `.webp` — оптимальный формат
-- Клади файлы в `static/media/`
-- Для внешних изображений используй API: `/api/thumbnail?src=URL&w=960&h=540`
+- Video: use `.webm` (VP9) — lightweight and supported by all browsers
+- Images: `.webp` — optimal format
+- Place files in `static/media/`
+- For external images use the API: `/api/thumbnail?src=URL&w=960&h=540`
 
 ---
 
-## Деплой на Cloudflare Pages
+## Deploy to Cloudflare Pages
 
-### Вариант A: через Git (рекомендуется)
+### Option A: via Git (recommended)
 
-1. Запушь проект на GitHub:
+1. Push the project to GitHub:
    ```bash
    git init
    git add .
@@ -97,77 +97,77 @@ portfolio/
    git push -u origin main
    ```
 
-2. Зайди на [Cloudflare Dashboard](https://dash.cloudflare.com/) → Pages → Create a project
+2. Go to [Cloudflare Dashboard](https://dash.cloudflare.com/) → Pages → Create a project
 
-3. Подключи GitHub-репозиторий
+3. Connect the GitHub repository
 
-4. Настройки сборки:
+4. Build settings:
    - **Build command:** `npm run build`
    - **Build output directory:** `.svelte-kit/cloudflare`
-   - **Node version:** 20 (задай через Environment variable `NODE_VERSION=20`)
+   - **Node version:** 20 (set via environment variable `NODE_VERSION=20`)
 
-5. Нажми "Save and Deploy"
+5. Click "Save and Deploy"
 
-6. Сайт будет доступен по адресу `https://portfolio-xxx.pages.dev`
+6. The site will be available at `https://portfolio-xxx.pages.dev`
 
-### Вариант B: через CLI
+### Option B: via CLI
 
 ```bash
-# Установи Wrangler CLI
+# Install Wrangler CLI
 npm install -g wrangler
 
-# Залогинься
+# Log in
 wrangler login
 
-# Собери проект
+# Build the project
 npm run build
 
-# Задеплой
+# Deploy
 wrangler pages deploy .svelte-kit/cloudflare --project-name=portfolio
 ```
 
 ---
 
-## Подключение домена
+## Custom Domain
 
-1. Купи домен (Cloudflare Registrar, Namecheap, Porkbun — любой)
+1. Buy a domain (Cloudflare Registrar, Namecheap, Porkbun — any provider)
 
-2. Если домен НЕ на Cloudflare:
-   - Перенеси DNS на Cloudflare (бесплатно)
-   - Или добавь CNAME-запись, указывающую на `portfolio-xxx.pages.dev`
+2. If the domain is NOT on Cloudflare:
+   - Transfer DNS to Cloudflare (free)
+   - Or add a CNAME record pointing to `portfolio-xxx.pages.dev`
 
-3. В Cloudflare Dashboard → Pages → твой проект → Custom domains → Add
+3. In Cloudflare Dashboard → Pages → your project → Custom domains → Add
 
-4. SSL-сертификат выпустится автоматически
-
----
-
-## Image Resizing (опционально)
-
-API `/api/thumbnail` автоматически ресайзит внешние картинки на Cloudflare.
-Для этого нужен план Cloudflare Pro ($20/мес) с включённым Image Resizing.
-
-Если не нужен ресайз — просто клади оптимизированные картинки в `static/media/`.
-API route будет работать как простой прокси.
+4. SSL certificate is issued automatically
 
 ---
 
-## Настройка под себя
+## Image Resizing (optional)
 
-### Изменить данные
-- `src/lib/data.js` → проекты, навыки, контакты, био
+The `/api/thumbnail` API automatically resizes external images on Cloudflare.
+This requires a Cloudflare Pro plan ($20/mo) with Image Resizing enabled.
 
-### Изменить цвета
-- `src/app.css` → CSS-переменные в `:root`
+If you don't need resizing — just place optimized images in `static/media/`.
+The API route will work as a simple proxy.
 
-### Изменить шрифты
-- `src/app.css` → заменить Google Fonts import
-- Обновить `font-family` в стилях
+---
 
-### Добавить аналитику
-Добавь скрипт в `src/app.html` перед `%sveltekit.head%`:
+## Customization
+
+### Change data
+- `src/lib/data.js` → projects, skills, contacts, bio
+
+### Change colors
+- `src/app.css` → CSS variables in `:root`
+
+### Change fonts
+- `src/app.css` → replace Google Fonts import
+- Update `font-family` in styles
+
+### Add analytics
+Add a script to `src/app.html` before `%sveltekit.head%`:
 ```html
-<!-- Cloudflare Web Analytics (бесплатно) -->
+<!-- Cloudflare Web Analytics (free) -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
   data-cf-beacon='{"token": "YOUR_TOKEN"}'></script>
 ```

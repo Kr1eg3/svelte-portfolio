@@ -121,7 +121,7 @@ export const skills = [
 ];
 
 export const meta = {
-	name: 'Arkadiy Alekseev',
+	name: 'Arkadiy Pozharskiy',
 	tagline: 'Graphics & Codecs',
 	role: 'Software Engineer | Video Codec Specialist | Graphics Programmer',
 	bio: `I'm a software engineer specializing in video codec analysis and real-time
@@ -131,9 +131,8 @@ export const meta = {
 		development workflows.`,
 	cta: 'Interested in video codecs, graphics programming, or game development? Let\'s connect.',
 	contacts: [
-		{ label: 'github', value: '@yourusername', href: 'https://github.com/yourusername' },
-		{ label: 'telegram', value: '@yourusername', href: 'https://t.me/yourusername' },
-		{ label: 'email', value: 'your.email [at] domain (dot) com', href: null }
+		{ label: 'github', value: '@Kr1eg3', href: 'https://github.com/Kr1eg3' },
+		{ label: 'email', value: 'pozharskiyarkadiy@gmail.com', href: 'mailto:pozharskiyarkadiy@gmail.com' }
 	],
 	location: 'Paphos, Cyprus'
 };
