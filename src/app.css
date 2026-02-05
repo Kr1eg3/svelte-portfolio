@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Source+Sans+3:wght@400;500;600&display=swap');
+
+:root {
+	--bg-primary: #0a0a0b;
+	--bg-secondary: #111113;
+	--bg-card: #161618;
+	--text-primary: #e8e8e8;
+	--text-secondary: #888;
+	--text-muted: #555;
+	--accent: #4a9eff;
+	--accent-hover: #6bb3ff;
+	--accent-dim: rgba(74, 158, 255, 0.12);
+	--tag-bg: #1a1a1c;
+	--tag-border: #2a2a2c;
+	--border: #1e1e20;
+	--green: #22c55e;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+	background: var(--bg-primary);
+	color: var(--text-primary);
+	line-height: 1.65;
+	min-height: 100vh;
+	-webkit-font-smoothing: antialiased;
+}
+
+::selection {
+	background: var(--accent);
+	color: var(--bg-primary);
+}
+
+a {
+	color: var(--accent);
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+a:hover {
+	color: var(--accent-hover);
+}
