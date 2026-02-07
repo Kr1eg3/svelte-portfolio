@@ -35,12 +35,60 @@ export const projects = [
 		]
 	},
 	{
+		id: 'ai-dev-tools',
+		title: 'AI Dev Tools',
+		subtitle: 'LLM integrations for developer productivity',
+		status: 'open-source',
+		url: '#',
+		media: null,
+		description: `Exploring AI-assisted development workflows through MCP server
+			integrations and RAG systems. Building tools that help automate repetitive
+			tasks like merging upstream codec changes while preserving custom instrumentation
+			code. Investigating how LLMs can enhance developer expertise in complex codebases.`,
+		tags: ['Python', 'TypeScript', 'MCP', 'RAG', 'LLM'],
+		links: [
+			{ label: 'View Source on GitHub', href: '#' }
+		]
+	},
+	{
+		id: 'ue5-shooter',
+		title: 'UE5 Third Person Shooter',
+		subtitle: 'GAS-driven shooter with procedural levels',
+		status: 'private',
+		url: null,
+		media: { type: 'video', src: '/media/ue5_third_person_shooter.webm' },
+		description: `A team project (~1.5 years) where I own the full codebase design. Built on
+			GAS — nearly all actions are abilities with Gameplay Effects and Tags. Features custom
+			projectile/hit-scan weapon system, procedural level generation, Behaviour Tree AI,
+			wave-based enemy spawner, and a dismemberment system. Enhanced Input for controls,
+			HUD for abilities and health. Full project available upon request.`,
+		tags: ['C++', 'Unreal Engine 5', 'GAS', 'Behaviour Trees', 'Procedural Generation'],
+		links: [
+			{ label: 'Progress on X', href: '#' }
+		]
+	},
+	{
+		id: 'tui-audio-player',
+		title: 'TUI Audio Player',
+		subtitle: 'Networked music player with terminal UI',
+		status: 'open-source',
+		url: 'https://github.com/Kr1eg3/tui_audio_player',
+		media: { type: 'image', src: '/media/audio-player-tui.jpg' },
+		description: `Cross-platform C++20 terminal music player with networked jam sessions.
+			Host/guest architecture syncs playback, playlists, and file transfers in real-time
+			over a custom binary protocol. Built with FTXUI, miniaudio, and standalone ASIO.`,
+		tags: ['C++20', 'FTXUI', 'ASIO', 'miniaudio', 'CMake'],
+		links: [
+			{ label: 'View Source on GitHub', href: 'https://github.com/Kr1eg3/tui_audio_player' }
+		]
+	},
+	{
 		id: 'dx12-engine',
 		title: 'DX12 Game Engine',
 		subtitle: 'Custom real-time graphics engine',
 		status: 'open-source',
-		url: '#', // замени на GitHub URL
-		media: null, // замени на { type: 'video', src: '/media/dx12-engine.webm' }
+		url: '#',
+		media: null,
 		description: `A from-scratch DirectX 12 renderer with focus on modern rendering
 			techniques and 2D/UI integration. Features include a flexible render graph
 			architecture, PBR materials pipeline, and efficient batched 2D rendering for
@@ -65,39 +113,6 @@ export const projects = [
 		tags: ['C++', 'Vulkan', 'GLSL', 'SPIR-V'],
 		links: [
 			{ label: 'View Source on GitHub', href: 'https://github.com/Kr1eg3/VulkanPractice' }
-		]
-	},
-	{
-		id: 'ue5-shooter',
-		title: 'UE5 Third Person Shooter',
-		subtitle: 'GAS-driven shooter with procedural levels',
-		status: 'private',
-		url: null,
-		media: { type: 'video', src: '/media/ue5_third_person_shooter.webm' },
-		description: `A team project (~1.5 years) where I own the full codebase design. Built on
-			GAS — nearly all actions are abilities with Gameplay Effects and Tags. Features custom
-			projectile/hit-scan weapon system, procedural level generation, Behaviour Tree AI,
-			wave-based enemy spawner, and a dismemberment system. Enhanced Input for controls,
-			HUD for abilities and health. Full project available upon request.`,
-		tags: ['C++', 'Unreal Engine 5', 'GAS', 'Behaviour Trees', 'Procedural Generation'],
-		links: [
-			{ label: 'Progress on X', href: '#' }
-		]
-	},
-	{
-		id: 'ai-dev-tools',
-		title: 'AI Dev Tools',
-		subtitle: 'LLM integrations for developer productivity',
-		status: 'open-source',
-		url: '#',
-		media: null,
-		description: `Exploring AI-assisted development workflows through MCP server
-			integrations and RAG systems. Building tools that help automate repetitive
-			tasks like merging upstream codec changes while preserving custom instrumentation
-			code. Investigating how LLMs can enhance developer expertise in complex codebases.`,
-		tags: ['Python', 'TypeScript', 'MCP', 'RAG', 'LLM'],
-		links: [
-			{ label: 'View Source on GitHub', href: '#' }
 		]
 	}
 ];
