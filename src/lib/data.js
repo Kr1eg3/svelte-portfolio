@@ -53,18 +53,18 @@ export const projects = [
 	},
 	{
 		id: 'vulkan-renderer',
-		title: 'Vulkan Renderer',
-		subtitle: 'Cross-platform graphics experiments',
+		title: 'Vulkan Practice',
+		subtitle: 'Learning Vulkan from the ground up',
 		status: 'open-source',
-		url: '#',
-		media: null,
-		description: `Experimental Vulkan-based renderer exploring modern GPU-driven rendering
-			techniques. Implements compute-based culling, bindless resources, and async
-			compute for parallel workload execution. Serves as a testbed for implementing
-			techniques from GDC talks and graphics research papers.`,
-		tags: ['C++', 'Vulkan', 'GLSL', 'SPIR-V', 'Compute Shaders'],
+		url: 'https://github.com/Kr1eg3/VulkanPractice',
+		media: { type: 'video', src: '/media/vulkan-practice.webm' },
+		description: `A hands-on Vulkan project covering the full pipeline: instance/device setup,
+			swap chains, SPIR-V shaders, render passes, command buffers, GPU synchronization
+			with semaphores/fences, vertex/index buffers, descriptor sets, texture sampling
+			with mipmaps, and depth/stencil testing.`,
+		tags: ['C++', 'Vulkan', 'GLSL', 'SPIR-V'],
 		links: [
-			{ label: 'View Source on GitHub', href: '#' }
+			{ label: 'View Source on GitHub', href: 'https://github.com/Kr1eg3/VulkanPractice' }
 		]
 	},
 	{
