@@ -74,7 +74,7 @@
 
 <style>
 	.container {
-		max-width: 900px;
+		max-width: 1200px;
 		margin: 0 auto;
 		padding: 0 24px;
 	}
@@ -149,6 +149,9 @@
 	/* ── Projects section ── */
 	#projects {
 		padding: 20px 0 40px;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 24px;
 	}
 
 	@keyframes fadeInUp {
@@ -224,9 +227,18 @@
 		color: var(--text-secondary);
 	}
 
+	@media (max-width: 960px) {
+		#projects {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
 	@media (max-width: 640px) {
 		header {
 			padding: 56px 0 40px;
+		}
+		#projects {
+			grid-template-columns: 1fr;
 		}
 		.skills-grid {
 			grid-template-columns: 1fr 1fr;

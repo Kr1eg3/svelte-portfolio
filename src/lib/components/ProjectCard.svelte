@@ -74,8 +74,13 @@
 
 <style>
 	.project {
-		padding: 56px 0;
-		border-bottom: 1px solid var(--border);
+		padding: 24px;
+		border: 1px solid var(--border);
+		border-radius: 8px;
+		background: var(--bg-secondary);
+		display: flex;
+		flex-direction: column;
+		height: 100%;
 	}
 
 	.project-header {
@@ -88,7 +93,7 @@
 
 	.project-title {
 		font-family: 'JetBrains Mono', monospace;
-		font-size: 1.45rem;
+		font-size: 1.15rem;
 		font-weight: 500;
 	}
 
@@ -145,11 +150,11 @@
 	}
 
 	.project-description {
-		font-size: 1rem;
+		font-size: 0.9rem;
 		color: var(--text-secondary);
 		margin-bottom: 24px;
-		max-width: 720px;
-		line-height: 1.7;
+		line-height: 1.6;
+		flex: 1;
 	}
 
 	.project-tags {
@@ -189,7 +194,7 @@
 
 	@media (max-width: 640px) {
 		.project {
-			padding: 40px 0;
+			padding: 20px;
 		}
 
 		.project-header {
