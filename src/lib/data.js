@@ -88,7 +88,7 @@ export const projects = [
 		subtitle: 'Custom real-time graphics engine',
 		status: 'open-source',
 		url: 'https://github.com/Kr1eg3/YetAnotherDxRenderer',
-		media: null,
+		media: { type: 'video', src: '/media/dx12-engine.webm' },
 		description: `A from-scratch DirectX 12 renderer with focus on modern rendering
 			techniques and 2D/UI integration. Features include a flexible render graph
 			architecture, PBR materials pipeline, and efficient batched 2D rendering for
