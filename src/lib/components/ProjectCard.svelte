@@ -140,6 +140,7 @@
 	.project-media {
 		background: var(--bg-secondary);
 		border-bottom: 1px solid var(--border);
+		padding: 12px;
 	}
 
 	.project-media img,
@@ -148,6 +149,7 @@
 		display: block;
 		aspect-ratio: 16 / 9;
 		object-fit: cover;
+		border-radius: 4px;
 	}
 
 	.project-media.placeholder {
