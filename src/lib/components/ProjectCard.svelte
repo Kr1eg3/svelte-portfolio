@@ -3,9 +3,9 @@
 	let { project } = $props();
 
 	const statusClass = {
-		'open-source': 'status-open',
-		'proprietary': 'status-closed',
-		'private': 'status-closed'
+		'open-source': 'status-badge-open',
+		'proprietary': 'status-badge-proprietary',
+		'private': 'status-badge-private'
 	};
 </script>
 
@@ -39,28 +39,24 @@
 	{/if}
 
 	<div class="project-body">
-		<div class="project-header">
-			<h2 class="project-title">
-				{#if project.url}
-					<a href={project.url}>{project.title}</a>
-				{:else}
-					{project.title}
-				{/if}
-			</h2>
-			<span class="project-status {statusClass[project.status] ?? ''}">
-				{project.status}
-			</span>
-		</div>
+		<h2 class="project-title">
+			{#if project.url}
+				<a href={project.url}>{project.title}</a>
+			{:else}
+				{project.title}
+			{/if}
+		</h2>
 
 		<p class="project-subtitle">{project.subtitle}</p>
 
 		<p class="project-description">{project.description}</p>
 
-	<div class="project-tags">
-		{#each project.tags as tag}
-			<span class="tag">{tag}</span>
-		{/each}
-	</div>
+		<div class="project-tags">
+			<span class="status-badge {statusClass[project.status] ?? ''}">{project.status}</span>
+			{#each project.tags as tag}
+				<span class="tag">{tag}</span>
+			{/each}
+		</div>
 
 		{#if project.links.length > 0}
 			<div class="project-links">
@@ -92,18 +88,11 @@
 		flex: 1;
 	}
 
-	.project-header {
-		display: flex;
-		align-items: baseline;
-		gap: 14px;
-		margin-bottom: 6px;
-		flex-wrap: wrap;
-	}
-
 	.project-title {
 		font-family: 'JetBrains Mono', monospace;
 		font-size: 1.15rem;
 		font-weight: 500;
+		margin-bottom: 6px;
 	}
 
 	.project-title a {
@@ -115,21 +104,37 @@
 		color: var(--accent);
 	}
 
-	.project-status {
-		font-family: 'JetBrains Mono', monospace;
-		font-size: 0.78rem;
-		color: var(--text-muted);
-	}
-
-	.status-open {
-		color: var(--green);
-	}
-
 	.project-subtitle {
 		font-size: 0.95rem;
 		color: var(--text-secondary);
 		margin-bottom: 24px;
 		font-style: italic;
+	}
+
+	.status-badge {
+		font-family: 'JetBrains Mono', monospace;
+		font-size: 0.73rem;
+		padding: 4px 10px;
+		border-radius: 4px;
+		font-weight: 500;
+	}
+
+	.status-badge-open {
+		color: #4ade80;
+		background: rgba(74, 222, 128, 0.1);
+		border: 1px solid rgba(74, 222, 128, 0.3);
+	}
+
+	.status-badge-proprietary {
+		color: #fb923c;
+		background: rgba(251, 146, 60, 0.1);
+		border: 1px solid rgba(251, 146, 60, 0.3);
+	}
+
+	.status-badge-private {
+		color: #f87171;
+		background: rgba(248, 113, 113, 0.1);
+		border: 1px solid rgba(248, 113, 113, 0.3);
 	}
 
 	.project-media {
@@ -201,11 +206,6 @@
 	@media (max-width: 640px) {
 		.project-body {
 			padding: 20px;
-		}
-
-		.project-header {
-			flex-direction: column;
-			gap: 4px;
 		}
 	}
 </style>
