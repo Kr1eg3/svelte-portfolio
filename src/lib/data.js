@@ -22,7 +22,7 @@ export const projects = [
 		subtitle: 'Professional video codec analysis tool',
 		status: 'proprietary',
 		url: null,
-		media: null,  // { type: 'video', src: '/media/vq-analyzer.webm' },
+		media: { type: 'image', src: '/media/vq_a.webp' },
 		description: `A comprehensive video quality analyzer for professional codec development.
 			I design and implement visualizations for various decoding stages across multiple
 			codec standards including AV1, HEVC, AVC, and AVS3. The tool helps engineers
@@ -35,19 +35,19 @@ export const projects = [
 		]
 	},
 	{
-		id: 'ai-dev-tools',
-		title: 'AI Dev Tools',
-		subtitle: 'LLM integrations for developer productivity',
-		status: 'open-source',
-		url: '#',
+		id: 'ai-codec-tools',
+		title: 'AI Codec Tools',
+		subtitle: 'LLM-powered toolkit for video codec engineers',
+		status: 'proprietary',
+		url: null,
 		media: null,
-		description: `Exploring AI-assisted development workflows through MCP server
-			integrations and RAG systems. Building tools that help automate repetitive
-			tasks like merging upstream codec changes while preserving custom instrumentation
-			code. Investigating how LLMs can enhance developer expertise in complex codebases.`,
-		tags: ['Python', 'TypeScript', 'MCP', 'RAG', 'LLM'],
+		description: `An LLM-based toolkit designed to assist video codec engineers. Includes
+			a RAG system over codec specs and codebase, an agent-based pipeline for automating
+			repetitive tasks like upstream merges while preserving custom instrumentation, and
+			MCP server integrations for seamless IDE workflows.`,
+		tags: ['Python', 'TypeScript', 'MCP', 'RAG', 'LLM', 'Agents', 'LangChain'],
 		links: [
-			{ label: 'View Source on GitHub', href: '#' }
+			{ label: 'Company Website', href: 'https://vicuesoft.com' }
 		]
 	},
 	{
@@ -87,7 +87,7 @@ export const projects = [
 		title: 'DX12 Game Engine',
 		subtitle: 'Custom real-time graphics engine',
 		status: 'open-source',
-		url: '#',
+		url: 'https://github.com/Kr1eg3/YetAnotherDxRenderer',
 		media: null,
 		description: `A from-scratch DirectX 12 renderer with focus on modern rendering
 			techniques and 2D/UI integration. Features include a flexible render graph
@@ -96,7 +96,7 @@ export const projects = [
 			graphics API design patterns.`,
 		tags: ['C++', 'DirectX 12', 'HLSL', 'PBR', 'Render Graph'],
 		links: [
-			{ label: 'View Source on GitHub', href: '#' }
+			{ label: 'View Source on GitHub', href: 'https://github.com/Kr1eg3/YetAnotherDxRenderer' }
 		]
 	},
 	{
@@ -110,6 +110,22 @@ export const projects = [
 			dynamic compilation, Phong/Blinn-Phong/Lambertian lighting, batched draw calls,
 			free-cam with orbit controls, Assimp model loading, and ImGui for runtime tweaking.`,
 		tags: ['C++', 'DirectX 11', 'HLSL', 'Win32', 'ImGui', 'Assimp'],
+		links: [
+			{ label: 'View Source on GitHub', href: 'https://github.com/Kr1eg3/DirectX11Practice' }
+		]
+	},
+	{
+		id: 'opengl-renderer',
+		title: 'OpenGL Renderer',
+		subtitle: 'Custom rendering engine from scratch',
+		status: 'open-source',
+		url: '#',
+		media: { type: 'image', src: '/media/opengl.png' },
+		description: `An early rendering engine built to learn core graphics concepts with OpenGL.
+			Covers buffer management (VBO/EBO/VAO), first/third-person camera, shader compilation,
+			texture loading, 3D model transforms, and ImGui overlays. Based on "C++ Game Animation
+			Programming."`,
+		tags: ['C++', 'OpenGL', 'GLFW', 'GLM', 'ImGui', 'CMake'],
 		links: [
 			{ label: 'View Source on GitHub', href: '#' }
 		]
