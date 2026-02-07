@@ -40,7 +40,7 @@ export const projects = [
 		subtitle: 'LLM-powered toolkit for video codec engineers',
 		status: 'proprietary',
 		url: null,
-		media: null,
+		media: { type: 'image', src: '/media/RAG.jpg' },
 		description: `An LLM-based toolkit designed to assist video codec engineers. Includes
 			a RAG system over codec specs and codebase, an agent-based pipeline for automating
 			repetitive tasks like upstream merges while preserving custom instrumentation, and
