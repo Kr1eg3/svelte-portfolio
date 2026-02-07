@@ -1,4 +1,6 @@
 <script>
+	import { onMount } from 'svelte';
+
 	/** @type {import('$lib/types').Project} */
 	let { project } = $props();
 
@@ -7,6 +9,25 @@
 		'proprietary': 'status-badge-proprietary',
 		'private': 'status-badge-private'
 	};
+
+	/** @type {HTMLVideoElement | undefined} */
+	let videoEl;
+
+	onMount(() => {
+		if (!videoEl) return;
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				if (entry.isIntersecting) {
+					videoEl?.play();
+				} else {
+					videoEl?.pause();
+				}
+			},
+			{ threshold: 0.25 }
+		);
+		observer.observe(videoEl);
+		return () => observer.disconnect();
+	});
 </script>
 
 <article class="project" id={project.id}>
@@ -14,11 +35,12 @@
 		<div class="project-media">
 			{#if project.media.type === 'video'}
 				<video
+					bind:this={videoEl}
 					src={project.media.src}
-					autoplay
 					loop
 					muted
 					playsinline
+					preload="none"
 				>
 					<track kind="captions" />
 				</video>
