@@ -58,7 +58,7 @@ export const projects = [
 		url: null,
 		media: { type: 'video', src: '/media/ue5_third_person_shooter.webm' },
 		description: `A team project (~1.5 years) where I own the full codebase design. Built on
-			GAS — nearly all actions are abilities with Gameplay Effects and Tags. Features custom
+			GAS. Nearly all actions are abilities with Gameplay Effects and Tags. Features custom
 			projectile/hit-scan weapon system, procedural level generation, Behaviour Tree AI,
 			wave-based enemy spawner, and a dismemberment system. Enhanced Input for controls,
 			HUD for abilities and health. Full project available upon request.`,
@@ -95,6 +95,21 @@ export const projects = [
 			UI overlays. Built to deeply understand low-level GPU programming and modern
 			graphics API design patterns.`,
 		tags: ['C++', 'DirectX 12', 'HLSL', 'PBR', 'Render Graph'],
+		links: [
+			{ label: 'View Source on GitHub', href: '#' }
+		]
+	},
+	{
+		id: 'dx11-renderer',
+		title: 'DirectX 11 Renderer',
+		subtitle: 'Win32 graphics playground with lighting & model loading',
+		status: 'open-source',
+		url: '#',
+		media: { type: 'video', src: '/media/dx11-renderer.webm' },
+		description: `A DirectX 11 renderer with Win32 window management, HLSL shaders with
+			dynamic compilation, Phong/Blinn-Phong/Lambertian lighting, batched draw calls,
+			free-cam with orbit controls, Assimp model loading, and ImGui for runtime tweaking.`,
+		tags: ['C++', 'DirectX 11', 'HLSL', 'Win32', 'ImGui', 'Assimp'],
 		links: [
 			{ label: 'View Source on GitHub', href: '#' }
 		]
