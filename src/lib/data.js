@@ -22,7 +22,7 @@ export const projects = [
 		subtitle: 'Professional video codec analysis tool',
 		status: 'proprietary',
 		url: null,
-		media: { type: 'video', src: '/media/vq-analyzer.webm' },
+		media: null,  // { type: 'video', src: '/media/vq-analyzer.webm' },
 		description: `A comprehensive video quality analyzer for professional codec development.
 			I design and implement visualizations for various decoding stages across multiple
 			codec standards including AV1, HEVC, AVC, and AVS3. The tool helps engineers
@@ -68,19 +68,20 @@ export const projects = [
 		]
 	},
 	{
-		id: 'ue5-framework',
-		title: 'UE5 Game Framework',
-		subtitle: 'Modular gameplay systems for Unreal Engine 5',
+		id: 'ue5-shooter',
+		title: 'UE5 Third Person Shooter',
+		subtitle: 'GAS-driven shooter with procedural levels',
 		status: 'private',
 		url: null,
-		media: null,
-		description: `A collection of reusable gameplay systems built in Unreal Engine 5.
-			Includes inventory management, ability system integration, procedural animation
-			layers, and optimized networking for multiplayer scenarios. Focused on clean
-			architecture and Blueprint-friendly C++ interfaces.`,
-		tags: ['C++', 'Unreal Engine 5', 'Blueprints', 'GAS', 'Networking'],
+		media: { type: 'video', src: '/media/ue5_third_person_shooter.webm' },
+		description: `A team project (~1.5 years) where I own the full codebase design. Built on
+			GAS — nearly all actions are abilities with Gameplay Effects and Tags. Features custom
+			projectile/hit-scan weapon system, procedural level generation, Behaviour Tree AI,
+			wave-based enemy spawner, and a dismemberment system. Enhanced Input for controls,
+			HUD for abilities and health. Full project available upon request.`,
+		tags: ['C++', 'Unreal Engine 5', 'GAS', 'Behaviour Trees', 'Procedural Generation'],
 		links: [
-			{ label: 'Demo Video', href: '#' }
+			{ label: 'Progress on X', href: '#' }
 		]
 	},
 	{
