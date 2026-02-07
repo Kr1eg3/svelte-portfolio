@@ -22,7 +22,7 @@ export const projects = [
 		subtitle: 'Professional video codec analysis tool',
 		status: 'proprietary',
 		url: null,
-		media: null, // замени на { type: 'image', src: '/media/vq-analyzer.webp' }
+		media: { type: 'image', src: '/media/2024-05-0221-09-26-ezgif.com-video-to-gif-converter.gif'}, // замени на { type: 'image', src: '/media/vq-analyzer.webp' }
 		description: `A comprehensive video quality analyzer for professional codec development.
 			I design and implement visualizations for various decoding stages across multiple
 			codec standards including AV1, HEVC, AVC, and AVS3. The tool helps engineers
