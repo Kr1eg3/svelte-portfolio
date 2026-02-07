@@ -10,21 +10,6 @@
 </script>
 
 <article class="project" id={project.id}>
-	<div class="project-header">
-		<h2 class="project-title">
-			{#if project.url}
-				<a href={project.url}>{project.title}</a>
-			{:else}
-				{project.title}
-			{/if}
-		</h2>
-		<span class="project-status {statusClass[project.status] ?? ''}">
-			{project.status}
-		</span>
-	</div>
-
-	<p class="project-subtitle">{project.subtitle}</p>
-
 	{#if project.media}
 		<div class="project-media">
 			{#if project.media.type === 'video'}
@@ -53,7 +38,23 @@
 		</div>
 	{/if}
 
-	<p class="project-description">{project.description}</p>
+	<div class="project-body">
+		<div class="project-header">
+			<h2 class="project-title">
+				{#if project.url}
+					<a href={project.url}>{project.title}</a>
+				{:else}
+					{project.title}
+				{/if}
+			</h2>
+			<span class="project-status {statusClass[project.status] ?? ''}">
+				{project.status}
+			</span>
+		</div>
+
+		<p class="project-subtitle">{project.subtitle}</p>
+
+		<p class="project-description">{project.description}</p>
 
 	<div class="project-tags">
 		{#each project.tags as tag}
@@ -61,26 +62,34 @@
 		{/each}
 	</div>
 
-	{#if project.links.length > 0}
-		<div class="project-links">
-			{#each project.links as link}
-				<a href={link.href} target="_blank" rel="noopener noreferrer">
-					{link.label}
-				</a>
-			{/each}
-		</div>
-	{/if}
+		{#if project.links.length > 0}
+			<div class="project-links">
+				{#each project.links as link}
+					<a href={link.href} target="_blank" rel="noopener noreferrer">
+						{link.label}
+					</a>
+				{/each}
+			</div>
+		{/if}
+	</div>
 </article>
 
 <style>
 	.project {
-		padding: 24px;
 		border: 1px solid var(--border);
 		border-radius: 8px;
 		background: var(--bg-secondary);
 		display: flex;
 		flex-direction: column;
 		height: 100%;
+		overflow: hidden;
+	}
+
+	.project-body {
+		padding: 24px;
+		display: flex;
+		flex-direction: column;
+		flex: 1;
 	}
 
 	.project-header {
@@ -124,11 +133,8 @@
 	}
 
 	.project-media {
-		margin-bottom: 24px;
-		border-radius: 6px;
-		overflow: hidden;
 		background: var(--bg-secondary);
-		border: 1px solid var(--border);
+		border-bottom: 1px solid var(--border);
 	}
 
 	.project-media img,
@@ -193,7 +199,7 @@
 	}
 
 	@media (max-width: 640px) {
-		.project {
+		.project-body {
 			padding: 20px;
 		}
 
