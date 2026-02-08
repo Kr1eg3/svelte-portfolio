@@ -187,9 +187,10 @@ export const meta = {
 	tagline: 'Codecs & Graphics',
 	role: 'Video Codec Engineer | Graphics & Low-Level Programming Enthusiast',
 	bio: `Video codec engineer working on decoder visualization tools and codec analysis
-		software. In my spare time I build renderers with DirectX, Vulkan, and OpenGL,
-		dig into low-level programming and reverse engineering, and explore AI-assisted
-		development workflows for codec engineering.`,
+		software. Previously worked in a computational department building aerodynamic
+		simulation models. In my spare time I build renderers with DirectX, Vulkan, and
+		OpenGL, dig into low-level programming and reverse engineering, and explore
+		AI-assisted development workflows for codec engineering.`,
 	cta: 'Interested in video codecs, graphics programming, or game development? Let\'s connect.',
 	contacts: [
 		{ label: 'github', value: '@Kr1eg3', href: 'https://github.com/Kr1eg3' },
