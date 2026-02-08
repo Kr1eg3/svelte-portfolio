@@ -119,7 +119,7 @@ export const projects = [
 		title: 'DirectX 11 Renderer',
 		subtitle: 'Win32 graphics playground with lighting & model loading',
 		status: 'open-source',
-		url: '#',
+		url: 'https://github.com/Kr1eg3/DirectX11Practice',
 		media: { type: 'video', src: '/media/dx11-renderer.webm' },
 		description: `A DirectX 11 renderer with Win32 window management, HLSL shaders with
 			dynamic compilation, Phong/Blinn-Phong/Lambertian lighting, batched draw calls,
@@ -170,7 +170,7 @@ export const skills = [
 	},
 	{
 		category: 'Video Codecs',
-		items: ['AV1 / AVM', 'HEVC (H.265)', 'AVC (H.264)', 'AVS3']
+		items: ['AVM', 'AV1', 'HEVC (H.265)', 'AVC (H.264)']
 	},
 	{
 		category: 'Languages',
@@ -184,13 +184,12 @@ export const skills = [
 
 export const meta = {
 	name: 'Arkadiy Pozharskiy',
-	tagline: 'Graphics & Codecs',
-	role: 'Software Engineer | Video Codec Specialist | Graphics Programmer',
-	bio: `I'm a software engineer specializing in video codec analysis and real-time
-		graphics. I combine deep knowledge of compression algorithms with hands-on
-		experience building custom renderers using DirectX, Vulkan, and OpenGL.
-		Currently working on decoder visualization tools and exploring AI-assisted
-		development workflows.`,
+	tagline: 'Codecs & Graphics',
+	role: 'Video Codec Engineer | Graphics & Low-Level Programming Enthusiast',
+	bio: `Video codec engineer working on decoder visualization tools and codec analysis
+		software. In my spare time I build renderers with DirectX, Vulkan, and OpenGL,
+		dig into low-level programming and reverse engineering, and explore AI-assisted
+		development workflows for codec engineering.`,
 	cta: 'Interested in video codecs, graphics programming, or game development? Let\'s connect.',
 	contacts: [
 		{ label: 'github', value: '@Kr1eg3', href: 'https://github.com/Kr1eg3' },
