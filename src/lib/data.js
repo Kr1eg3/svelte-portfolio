@@ -68,6 +68,21 @@ export const projects = [
 		]
 	},
 	{
+		id: 'ezcodec',
+		title: 'EzCodec',
+		subtitle: 'DCT-based image compression from scratch',
+		status: 'open-source',
+		url: 'https://github.com/Kr1eg3/EzCodec',
+		media: { type: 'image', src: '/media/comparison.png' },
+		description: `A C++17 JPEG-style grayscale image compressor with a custom .ezc binary format.
+			Implements DCT, JPEG luminance quantization (quality 1–100), and multi-threaded
+			encoding via a custom thread pool. Cross-platform CLI with CMake.`,
+		tags: ['C++17', 'DCT', 'Image Compression', 'CMake'],
+		links: [
+			{ label: 'View Source on GitHub', href: 'https://github.com/Kr1eg3/EzCodec' }
+		]
+	},
+	{
 		id: 'tui-audio-player',
 		title: 'TUI Audio Player',
 		subtitle: 'Networked music player with terminal UI',
